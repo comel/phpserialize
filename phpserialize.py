@@ -373,7 +373,7 @@ def dumps(data, charset='utf-8', errors=default_errors, object_hook=None):
             if isinstance(obj, (int, long)):
                 return ('i:%s;' % obj).encode('latin1')
             if isinstance(obj, float):
-                return ('d:%s;' % obj).encode('latin1')
+                return ('d:%.17f;' % obj).encode('latin1')
             if isinstance(obj, basestring):
                 encoded_obj = obj
                 if isinstance(obj, unicode):
